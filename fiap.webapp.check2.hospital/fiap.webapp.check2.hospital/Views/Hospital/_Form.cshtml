@@ -1,0 +1,34 @@
+﻿@model Hospital
+
+<div class="form-group">
+    <label asp-for="Nome"></label>
+    <input asp-for="Nome" class="form-control" />
+</div>
+
+<div class="form-group">
+    <input asp-for="Pacientes" type="hidden" value="" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label asp-for="Endereco.Rua"></label>
+    <input asp-for="Endereco.Rua" class="form-control" />
+</div>
+
+<div class="col-12" style="display:flex; flex-direction: row; align-content: center; padding: 0">
+    <div class="form-group mr-5 w-100">
+        <label asp-for="Endereco.Bairro"></label>
+        <input asp-for="Endereco.Bairro" class="form-control" />
+    </div>
+
+    <div class="form-group w-100">
+        <label asp-for="Endereco.Cep"></label>
+        <input asp-for="Endereco.Cep" class="form-control" id="cep"/>
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="Capacidade"></label>
+    <input asp-for="Capacidade" class="form-control" />
+</div>
+<script type="text/javascript">
+    $("#cep").mask("00000-000");
+</script>

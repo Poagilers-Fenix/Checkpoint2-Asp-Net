@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Henrique\\Desktop\\check2\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj": {}
+    "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Henrique\\Desktop\\check2\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj": {
+    "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Henrique\\Desktop\\check2\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
+        "projectUniqueName": "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
         "projectName": "fiap.webapp.check2.hospital",
-        "projectPath": "C:\\Users\\Henrique\\Desktop\\check2\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
+        "projectPath": "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
         "packagesPath": "C:\\Users\\Henrique\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Henrique\\Desktop\\check2\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\obj\\",
+        "outputPath": "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -46,6 +46,16 @@
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",
               "version": "[3.1.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
             }
           },
           "imports": [

@@ -1,0 +1,16 @@
+﻿@{ ViewData["title"] = "Cadastrar venda"; }
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+<h2 class="text-center">Cadastro de Hospital</h2>
+<br />
+
+<mensagem texto="@TempData["msg"]"></mensagem>
+
+<form asp-action="Cadastrar">
+    <partial name="_Form" />
+
+    <button class="btn btn-success">Salvar</button>
+    <a asp-action="index" class="btn btn-outline-secondary">Voltar</a>
+</form>

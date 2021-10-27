@@ -13,6 +13,6 @@ namespace fiap.webapp.check2.hospital.Models
         public Endereco Endereco { get; set; }
         public DateTime DataNascimento { get; set; }
         public Hospital Hospital { get; set; }
-        public ICollection<Doenca> Doencas { get; set; }
+        public ICollection<Doenca> Doenca { get; set; }
     }
 }

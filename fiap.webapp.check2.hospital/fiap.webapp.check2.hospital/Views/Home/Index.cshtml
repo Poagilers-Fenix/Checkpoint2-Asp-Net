@@ -1,8 +1,31 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="~/css/EstilizacaoHome.css" rel="stylesheet" />
+
+<div style="display: flex; flex-direction: column;">
+        <row class="mt-4">
+            <div class="d-flex row my-auto justify-content-around align-content-center">
+                <div class="col-md-5 div-warning">
+                    <span style="display: flex; justify-content: center; font-size: 40px; color: #FFc107" class="material-icons ml-2 mb-1">manage_accounts</span>
+                    <h2 style="display: flex; justify-content: center;" class="mb-5 bold">Hospital</h2>
+
+                    <h3 style="display: flex; justify-content: center;" class="mb-3">Editar informações</h3>
+                    <div class="mx-auto row justify-content-center">
+                        <a asp-action="Cadastrar" asp-controller="Hospital" class="btn btn-warning mx-2">Cadastrar</a>
+                            <a asp-controller="Hospital" class="btn btn-warning mx-2">Ver Hospitais</a>
+                    </div>
+                </div>
+                <div class="col-md-5 div-danger">
+                    <h2 style="display: flex; justify-content: center;" class="mb-3 bold"><span class="material-icons text-danger" style="font-size: 50px">people</span></h2>
+
+                    <h3 style="display: flex; justify-content: center;" class="mb-3">Pacientes</h3>
+                    <div class="mx-auto row justify-content-center">
+                        <button type="button" class="mb-3 btn btn-danger" data-toggle="modal" data-target="#modalConfirma">
+                            Listagem de Pacientes
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </row>
 </div>

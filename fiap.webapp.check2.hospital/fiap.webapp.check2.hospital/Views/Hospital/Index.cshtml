@@ -1,0 +1,60 @@
+﻿@model IList<Hospital>
+
+    @{ ViewData["title"] = "Listagem de churros"; }
+
+    <h2>Listagem de Hospitais</h2>
+    <br />
+
+    <mensagem texto="@TempData["msg"]"></mensagem>
+
+    <div class="row">
+        <div class="ml-3 mb-3">
+            <a asp-action="Cadastrar" class="btn btn-secondary">Adicionar venda</a>
+            <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Buscar por sabor</a>
+        </div>
+        @if (ViewBag.sabor != null)
+        {
+    <div class="ml-md-auto mr-3">
+        <p style="border: 2px #ccc solid; padding: 5px; border-radius: 5px">@ViewBag.sabor <a asp-action="index"><img src="~/img/x.png" /></a></p>
+    </div>}
+    </div>
+
+    <table class="table text-center">
+        <cabecalho></cabecalho>
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>@item.HospitalId</td>
+        <td>@item.Nome</td>
+        <td>@item.Capacidade</td>
+        <td>
+            <form asp-action="index">
+                <a class="btn btn-outline-info btn-sm" asp-action="editar" asp-route-id="@item.HospitalId">Editar</a>
+                <button onclick="idChurros.value = @item.HospitalId" type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">Remover</button>
+            </form>
+        </td>
+    </tr>}
+    </table>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Deseja realmente apagar a venda de churros?
+                </div>
+                <div class="modal-footer">
+                    <form asp-action="remover">
+                        <input type="hidden" name="id" id="idChurros" />
+                        <button type="button" class="btn btn-warning" data-dismiss="modal">Não</button>
+                        <button type="submit" class="btn btn-secondary">Sim</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
