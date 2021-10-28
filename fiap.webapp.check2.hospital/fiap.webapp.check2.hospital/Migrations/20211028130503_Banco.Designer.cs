@@ -10,8 +10,8 @@ using fiap.webapp.check2.hospital.Persistencias;
 namespace fiap.webapp.check2.hospital.Migrations
 {
     [DbContext(typeof(HospitalContext))]
-    [Migration("20211027201753_Hospital")]
-    partial class Hospital
+    [Migration("20211028130503_Banco")]
+    partial class Banco
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,14 +44,18 @@ namespace fiap.webapp.check2.hospital.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.Property<string>("Sintomas")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("DoencaId");
 
-                    b.ToTable("Doenca");
+                    b.ToTable("Doencas");
                 });
 
             modelBuilder.Entity("fiap.webapp.check2.hospital.Models.Endereco", b =>
@@ -62,17 +66,23 @@ namespace fiap.webapp.check2.hospital.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Bairro")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("Cep")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(9)
+                        .HasColumnType("nvarchar(9)");
 
                     b.Property<string>("Rua")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("EnderecoId");
 
-                    b.ToTable("Endereco");
+                    b.ToTable("Enderecos");
                 });
 
             modelBuilder.Entity("fiap.webapp.check2.hospital.Models.Hospital", b =>
@@ -82,20 +92,23 @@ namespace fiap.webapp.check2.hospital.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Capacidade")
-                        .HasColumnType("int");
+                    b.Property<decimal?>("Capacidade")
+                        .IsRequired()
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int?>("EnderecoId")
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("HospitalId");
 
                     b.HasIndex("EnderecoId");
 
-                    b.ToTable("Hospital");
+                    b.ToTable("Hospitais");
                 });
 
             modelBuilder.Entity("fiap.webapp.check2.hospital.Models.Paciente", b =>
@@ -106,9 +119,12 @@ namespace fiap.webapp.check2.hospital.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Cpf")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(14)
+                        .HasColumnType("nvarchar(14)");
 
-                    b.Property<DateTime>("DataNascimento")
+                    b.Property<DateTime?>("DataNascimento")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<int?>("EnderecoId")
@@ -118,7 +134,9 @@ namespace fiap.webapp.check2.hospital.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
 
                     b.HasKey("PacienteId");
 
@@ -126,7 +144,7 @@ namespace fiap.webapp.check2.hospital.Migrations
 
                     b.HasIndex("HospitalId");
 
-                    b.ToTable("Paciente");
+                    b.ToTable("Pacientes");
                 });
 
             modelBuilder.Entity("DoencaPaciente", b =>

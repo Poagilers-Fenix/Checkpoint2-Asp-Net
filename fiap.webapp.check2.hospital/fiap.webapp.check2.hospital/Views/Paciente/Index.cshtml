@@ -1,35 +1,40 @@
-﻿@{ ViewData["title"] = "Pacientes"; }
+﻿@model IList<Paciente>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+@{ ViewData["title"] = "Listagem de churros"; }
 
-<div class="d-flex col-6">
-    <h2 class="text-center">Cadastro de Paciente</h2>
-    <br />
+<h2>Listagem de Pacientes</h2>
+<br />
 
-    <mensagem texto="@TempData["msg"]"></mensagem>
+<mensagem texto="@TempData["msg"]"></mensagem>
 
-    <form asp-action="Cadastrar">
-        <partial name="_Form" />
-
-        <button class="btn btn-success">Salvar</button>
-        <a asp-action="index" class="btn btn-outline-secondary">Voltar</a>
-    </form>
+<div class="row">
+    <div class="ml-3 mb-3">
+        <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Buscar Pacientes</a>
+    </div>
+    @if (ViewBag.sabor != null)
+    {
+<div class="ml-md-auto mr-3">
+    <p style="border: 2px #ccc solid; padding: 5px; border-radius: 5px">@ViewBag.sabor <a asp-action="index"><img src="~/img/x.png" /></a></p>
+</div>}
 </div>
-<div class="d-flex col-6">
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nome</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var p in ViewBag.pacientes)
-            {
-                <tr>
-                    <td>@p.Nome</td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
+
+<table class="table text-center">
+    <cabecalho></cabecalho>
+    <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Cpf</th>
+        <th>Endereço</th>
+        <th>Data Nascimento</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.PacienteId</td>
+    <td>@item.Nome</td>
+    <td>@item.Cpf</td>
+    <td>@item.Endereco.Rua, @item.Endereco.Bairro (@item.Endereco.Cep)</td>
+    <td>@item.DataNascimento.Value.ToShortDateString()</td>
+</tr>
+}
+</table>

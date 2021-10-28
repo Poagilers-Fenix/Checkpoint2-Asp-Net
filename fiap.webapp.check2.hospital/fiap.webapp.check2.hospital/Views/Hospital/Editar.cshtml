@@ -1,0 +1,14 @@
+﻿@model Hospital
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<h1>Editar</h1>
+
+<form asp-action="Editar">
+    <input asp-for="HospitalId" type="hidden"/>
+
+    <partial name="_Form" /> <!-- Inclui o conteúdo do arquivo _Form -->
+
+    <input type="submit" class="btn btn-outline-primary" value="Editar" />
+</form>

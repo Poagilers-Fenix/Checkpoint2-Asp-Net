@@ -10,7 +10,6 @@
                     <span style="display: flex; justify-content: center; font-size: 40px; color: #FFc107" class="material-icons ml-2 mb-1">manage_accounts</span>
                     <h2 style="display: flex; justify-content: center;" class="mb-5 bold">Hospital</h2>
 
-                    <h3 style="display: flex; justify-content: center;" class="mb-3">Editar informações</h3>
                     <div class="mx-auto row justify-content-center">
                         <a asp-action="Cadastrar" asp-controller="Hospital" class="btn btn-warning mx-2">Cadastrar</a>
                             <a asp-controller="Hospital" class="btn btn-warning mx-2">Ver Hospitais</a>
@@ -24,6 +23,7 @@
                         <a type="button" class="mb-3 btn btn-danger" asp-action="index" asp-controller="paciente">
                             Listagem de Pacientes
                         </a>
+                        <a asp-action="Cadastrar" asp-controller="Paciente" class="btn btn-danger mb-3 ml-3">Cadastrar paciente</a>
                     </div>
                 </div>
             </div>
