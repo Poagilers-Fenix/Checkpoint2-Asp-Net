@@ -26,7 +26,7 @@ namespace fiap.webapp.check2.hospital
         {
             services.AddControllersWithViews();
             //Configurar a injeção de dependência do DbContext
-            services.AddDbContext<EstabContext>(op => op.UseSqlServer(Configuration.GetConnectionString("conexao")));
+            services.AddDbContext<HospitalContext>(op => op.UseSqlServer(Configuration.GetConnectionString("conexao")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

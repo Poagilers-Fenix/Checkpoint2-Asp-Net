@@ -9,7 +9,7 @@ using fiap.webapp.check2.hospital.Persistencias;
 
 namespace fiap.webapp.check2.hospital.Migrations
 {
-    [DbContext(typeof(EstabContext))]
+    [DbContext(typeof(HospitalContext))]
     [Migration("20211027201753_Hospital")]
     partial class Hospital
     {

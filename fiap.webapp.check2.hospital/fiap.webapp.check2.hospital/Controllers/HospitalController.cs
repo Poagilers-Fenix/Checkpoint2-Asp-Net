@@ -11,16 +11,16 @@ namespace fiap.webapp.check2.hospital.Controllers
     public class HospitalController : Controller
     {
         //Atributo para armazenar o context
-        private EstabContext _context;
+        private HospitalContext _context;
         //Construtor que recebe por injeção de dependência o Context
-        public HospitalController(EstabContext context)
+        public HospitalController(HospitalContext context)
         {
             _context = context;
         }
         public IActionResult Index()
         {
             //Console.WriteLine(_context.Hospital.ToList()[0]);
-            return View(_context.Hospital.ToList());
+            return View(_context.Hospitais.ToList());
         }
         [HttpGet]
         public IActionResult Cadastrar()
@@ -31,7 +31,7 @@ namespace fiap.webapp.check2.hospital.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Hospital hospital)
         {
-            _context.Hospital.Add(hospital);
+            _context.Hospitais.Add(hospital);
             _context.SaveChanges();
             TempData["msg"] = "Hospital cadastrado com sucesso";
             return RedirectToAction("index");
