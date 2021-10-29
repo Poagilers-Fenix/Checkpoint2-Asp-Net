@@ -10,8 +10,8 @@ using fiap.webapp.check2.hospital.Persistencias;
 namespace fiap.webapp.check2.hospital.Migrations
 {
     [DbContext(typeof(HospitalContext))]
-    [Migration("20211028130503_Banco")]
-    partial class Banco
+    [Migration("20211029012238_BD")]
+    partial class BD
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -9,7 +9,7 @@ using fiap.webapp.check2.hospital.Persistencias;
 namespace fiap.webapp.check2.hospital.Migrations
 {
     [DbContext(typeof(HospitalContext))]
-    partial class EstabContextModelSnapshot : ModelSnapshot
+    partial class HospitalContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

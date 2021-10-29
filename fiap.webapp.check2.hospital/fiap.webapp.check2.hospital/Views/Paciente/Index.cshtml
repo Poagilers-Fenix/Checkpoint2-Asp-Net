@@ -1,6 +1,6 @@
 ﻿@model IList<Paciente>
 
-@{ ViewData["title"] = "Listagem de churros"; }
+@{ ViewData["title"] = "Listagem de Pacientes"; }
 
 <h2>Listagem de Pacientes</h2>
 <br />
@@ -37,7 +37,7 @@
     <td>@item.Cpf</td>
     <td>@item.Endereco.Rua, @item.Endereco.Bairro (@item.Endereco.Cep)</td>
     <td>@item.DataNascimento.Value.ToShortDateString()</td>
-    <td><a asp-action="CadastrarDoencaPraPaciente" asp-controller="Paciente" asp-route-id="@item.PacienteId" class="btn btn-dark mb-3 ml-3">Cadastrar doença para esse paciente</a></td>
+    <td><a asp-action="CadastrarDoencaPraPaciente" asp-controller="Paciente" asp-route-id="@item.PacienteId" name="idPaciente" class="btn btn-dark mb-3 ml-3">Cadastrar doença para esse paciente</a></td>
 </tr>
 }
 </table>

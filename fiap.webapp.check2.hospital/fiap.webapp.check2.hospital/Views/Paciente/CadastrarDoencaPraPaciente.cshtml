@@ -2,9 +2,10 @@
 
 
 <div class="form-group">
-    <label asp-for="Nome"></label>
-    <input asp-for="Nome" value="@Model.Nome" class="form-control" />
-    <span asp-validation-for="Nome" class="text-danger mb-3" style="text-align: center"></span>
+    <p>@Model.Nome</p>
+    <input asp-for="PacienteId" class="form-control" type="hidden" />
+    <select class="form-control mr-1" asp-items="@ViewBag.doencas" name="generoBusca">
+    </select>
 </div>
 
 <!--

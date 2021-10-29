@@ -1,6 +1,7 @@
 ﻿using fiap.webapp.check2.hospital.Models;
 using fiap.webapp.check2.hospital.Persistencias;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -45,11 +46,12 @@ namespace fiap.webapp.check2.hospital.Controllers
             return View(lista);
         }
 
-        [HttpGet]
+        [HttpGet("/paciente/CadastrarDoencaPraPaciente/{idPaciente}")]
         public IActionResult CadastrarDoencaPraPaciente(int idPaciente)
         {
             Paciente paciente = _context.Pacientes.Find(idPaciente);
-            Console.WriteLine(paciente);
+            var lista = _context.Doencas.ToList();
+            ViewBag.doencas = new SelectList(lista, "DoencaId", "Nome");
             return View(paciente);
         }
     }
