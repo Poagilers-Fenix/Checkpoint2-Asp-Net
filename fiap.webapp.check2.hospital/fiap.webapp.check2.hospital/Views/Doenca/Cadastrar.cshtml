@@ -1,0 +1,13 @@
+﻿@{ ViewData["title"] = "Cadastro de doenças"; }
+
+<h2 class="text-center">Cadastro de doença</h2>
+<br />
+
+<mensagem texto="@TempData["msg"]"></mensagem>
+
+<form asp-action="Cadastrar" asp-controller="Doenca">
+    <partial name="_Form" />
+
+    <button class="btn btn-success">Salvar</button>
+    <a asp-action="index" asp-controller="Paciente" class="btn btn-outline-secondary">Voltar</a>
+</form>
