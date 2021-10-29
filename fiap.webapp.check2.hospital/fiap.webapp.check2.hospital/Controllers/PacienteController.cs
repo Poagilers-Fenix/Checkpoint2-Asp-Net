@@ -44,5 +44,13 @@ namespace fiap.webapp.check2.hospital.Controllers
             ViewBag.pacientes = lista;
             return View(lista);
         }
+
+        [HttpGet]
+        public IActionResult CadastrarDoencaPraPaciente(int idPaciente)
+        {
+            Paciente paciente = _context.Pacientes.Find(idPaciente);
+            Console.WriteLine(paciente);
+            return View(paciente);
+        }
     }
 }
