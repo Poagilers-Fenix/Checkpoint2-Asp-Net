@@ -9,7 +9,6 @@ namespace fiap.webapp.check2.hospital.Models
     
     public class PacienteDoenca
     {
-        public int Id { get; set; }
         public int PacienteId { get; set; }
         public Paciente Paciente { get; set; }
         public int DoencaId { get; set; }

@@ -27,6 +27,7 @@ namespace fiap.webapp.check2.hospital.Models
         [Display(Name = "Qual a data de nascimento do paciente?"), Required(ErrorMessage = "Esse campo é obrigatório")]
         public DateTime? DataNascimento { get; set; }
         public Hospital Hospital { get; set; }
-        public ICollection<Doenca> Doenca { get; set; }
+        //public ICollection<Doenca> Doenca { get; set; }
+        public IList<PacienteDoenca> PacientesDoencas { get; set; }
     }
 }
