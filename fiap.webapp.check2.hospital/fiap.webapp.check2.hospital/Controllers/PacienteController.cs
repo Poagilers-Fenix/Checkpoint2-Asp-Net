@@ -22,6 +22,8 @@ namespace fiap.webapp.check2.hospital.Controllers
         [HttpGet]
         public IActionResult Cadastrar()
         {
+            var lista = _context.Hospitais.ToList();
+            ViewBag.Hospitais = new SelectList(lista, "HospitalId", "Nome");
             return View();
         }
 
@@ -30,6 +32,7 @@ namespace fiap.webapp.check2.hospital.Controllers
         {
             if (ModelState.IsValid)
             {
+                Console.WriteLine();
                 _context.Pacientes.Add(paciente);
                 _context.SaveChanges();
                 TempData["msg"] = "Paciente cadastrado com sucesso";
@@ -39,9 +42,18 @@ namespace fiap.webapp.check2.hospital.Controllers
         }
 
 
-        public IActionResult Index()
+        public IActionResult Index(string pesquisa)
         {
-            List<Paciente> lista = _context.Pacientes.Include(h => h.Endereco).ToList();
+            var lista = _context.Pacientes.Include(p => p.Endereco).ToList();
+            Console.WriteLine(pesquisa);
+            if (!string.IsNullOrEmpty(pesquisa))
+            {
+                var filter = lista.FindAll(p => p.Nome.ToLower().Contains(pesquisa.ToLower()));
+                Console.WriteLine(filter);
+                ViewBag.nomePaciente = pesquisa;
+                return View(filter);
+            }
+            //List<Paciente> lista = _context.Pacientes.Where(p => p.Nome.ToLower().Contains(pesquisa.ToLower()) || pesquisa == null).Include(h => h.Endereco).ToList();
             ViewBag.pacientes = lista;
             return View(lista);
         }
@@ -52,6 +64,7 @@ namespace fiap.webapp.check2.hospital.Controllers
             Paciente paciente = _context.Pacientes.Find(idPaciente);
             var lista = _context.Doencas.ToList();
             ViewBag.doencas = new SelectList(lista, "DoencaId", "Nome");
+            ViewBag.doencasPorId = _context.PacienteDoencas.Where(p => p.PacienteId == idPaciente).Select(p => p.Doenca).ToList();
             return View(paciente);
         }
 

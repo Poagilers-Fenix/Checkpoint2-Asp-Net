@@ -1,67 +1,74 @@
 ﻿@model IList<Hospital>
 
-    @{ ViewData["title"] = "Listagem de churros"; }
+@{ ViewData["title"] = "Listagem de churros"; }
 
-    <h2>Listagem de Hospitais</h2>
-    <br />
+<h2>Listagem de Hospitais</h2>
+<br />
 
-    <mensagem texto="@TempData["msg"]"></mensagem>
+<mensagem texto="@TempData["msg"]"></mensagem>
 
-    <div class="row">
-        <div class="ml-3 mb-3">
-            <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Buscar Hospitais</a>
-        </div>
-        @if (ViewBag.sabor != null)
-        {
-    <div class="ml-md-auto mr-3">
-        <p style="border: 2px #ccc solid; padding: 5px; border-radius: 5px">@ViewBag.sabor <a asp-action="index"><img src="~/img/x.png" /></a></p>
-    </div>}
-    </div>
+<div class="row">
+    @if (ViewBag.sabor != null)
+    {
+        <div class="ml-md-auto mr-3">
+            <p style="border: 2px #ccc solid; padding: 5px; border-radius: 5px">@ViewBag.sabor <a asp-action="index"><img src="~/img/x.png" /></a></p>
+        </div>}
+</div>
 
-    <table class="table text-center">
-        <cabecalho></cabecalho>
-        <tr>
-            <th>Código</th>
-            <th>Nome</th>
-            <th>Capacidade</th>
-            <th>Endereço</th>
-            <th>Ação</th>
-        </tr>
-        @foreach (var item in Model)
-        {
+<table class="table text-center">
+    <cabecalho></cabecalho>
     <tr>
-        <td>@item.HospitalId</td>
-        <td>@item.Nome</td>
-        <td>@item.Capacidade</td>
-        <td>@item.Endereco.Rua, @item.Endereco.Bairro (@item.Endereco.Cep)</td>
-        <td>
-            <form asp-action="index">
-                <a class="btn btn-outline-info btn-sm" asp-action="editar" asp-route-id="@item.HospitalId">Editar</a>
-                <button onclick="idHospital.value = @item.HospitalId" type="button" class="btn btn-outline-secondary btn-sm" data-toggle="modal" data-target="#exampleModal">Remover</button>
-            </form>
-        </td>
-    </tr>}
-    </table>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>Capacidade</th>
+        <th>Endereço</th>
+        <th>Ação</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.HospitalId</td>
+            <td>@item.Nome</td>
+            <td>@item.Capacidade</td>
+            <td>@item.Endereco.Rua, @item.Endereco.Bairro (@item.Endereco.Cep)</td>
+            <td>
+                <form asp-action="index">
+                    <a class="btn btn-sm p-0" asp-action="editar" asp-route-id="@item.HospitalId">
+                        <span class="material-icons text-primary">
+                            edit
+                        </span>
+                    </a>
+                    <button onclick="idHospital.value = @item.HospitalId" type="button" class="btn btn-sm" data-toggle="modal" data-target="#exampleModal">
+                        <span class="material-icons text-danger">
+                            delete
+                        </span>
                     </button>
-                </div>
-                <div class="modal-body">
-                    Deseja realmente apagar o hospital?
-                </div>
-                <div class="modal-footer">
-                    <form asp-action="Remover">
-                        <input type="hidden" name="id" id="idHospital" />
-                        <button type="submit" class="btn btn-secondary">Sim</button>
-                        <button type="button" class="btn btn-warning" data-dismiss="modal">Não</button>
-                    </form>
-                </div>
+                    <a asp-action="buscarPacientes" asp-controller="Hospital" asp-route-id="@item.HospitalId" class="btn btn-outline-secondary btn-sm">Ver Pacientes</a>
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Confirmação</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Deseja realmente apagar o hospital?
+            </div>
+            <div class="modal-footer">
+                <form asp-action="Remover">
+                    <input type="hidden" name="id" id="idHospital" />
+                    <button type="submit" class="btn btn-secondary">Sim</button>
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Não</button>
+                </form>
             </div>
         </div>
     </div>
+</div>

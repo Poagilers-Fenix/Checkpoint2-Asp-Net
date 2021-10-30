@@ -19,30 +19,36 @@
     <label asp-for="DataNascimento"></label>
     <input asp-for="DataNascimento" class="form-control" />
     <span asp-validation-for="DataNascimento" class="text-danger mb-3" style="text-align: center"></span>
-</div><br />
-
-<h4>Endereço</h4>
+</div>
 <div class="form-group">
-    <label asp-for="Endereco.Rua"></label>
-    <input asp-for="Endereco.Rua" class="form-control" />
-    <span asp-validation-for="Endereco.Rua" class="text-danger mb-3" style="text-align: center"></span>
+    <label>Selecione um Hospital</label>
+    <select class="form-control mr-1" asp-items="@ViewBag.Hospitais" asp-for="HospitalId">
+        <option disabled>--Selecione um Hospital--</option>
+    </select>
 </div>
-
-<div class="col-12" style="display:flex; flex-direction: row; align-content: center; padding: 0">
-    <div class="form-group mr-5 w-100">
-        <label asp-for="Endereco.Bairro"></label>
-        <input asp-for="Endereco.Bairro" class="form-control" />
-        <span asp-validation-for="Endereco.Bairro" class="text-danger mb-3" style="text-align: center"></span>
+<br />
+    <h4>Endereço</h4>
+    <div class="form-group">
+        <label asp-for="Endereco.Rua"></label>
+        <input asp-for="Endereco.Rua" class="form-control" />
+        <span asp-validation-for="Endereco.Rua" class="text-danger mb-3" style="text-align: center"></span>
     </div>
 
-    <div class="form-group w-100">
-        <label asp-for="Endereco.Cep"></label>
-        <input asp-for="Endereco.Cep" class="form-control" id="cep" />
-        <span asp-validation-for="Endereco.Cep" class="text-danger mb-3" style="text-align: center"></span>
+    <div class="col-12" style="display:flex; flex-direction: row; align-content: center; padding: 0">
+        <div class="form-group mr-5 w-100">
+            <label asp-for="Endereco.Bairro"></label>
+            <input asp-for="Endereco.Bairro" class="form-control" />
+            <span asp-validation-for="Endereco.Bairro" class="text-danger mb-3" style="text-align: center"></span>
+        </div>
 
+        <div class="form-group w-100">
+            <label asp-for="Endereco.Cep"></label>
+            <input asp-for="Endereco.Cep" class="form-control" id="cep" />
+            <span asp-validation-for="Endereco.Cep" class="text-danger mb-3" style="text-align: center"></span>
+
+        </div>
     </div>
-</div>
-<script type="text/javascript">
-    $("#cep").mask("00000-000");
-    $("#cpf").mask("999.999.999-99");
-</script>
+    <script type="text/javascript">
+        $("#cep").mask("00000-000");
+        $("#cpf").mask("999.999.999-99");
+    </script>

@@ -23,7 +23,6 @@ namespace fiap.webapp.check2.hospital.Models
         [MaxLength(40, ErrorMessage = "Os sintomas devem ter 40 caracteres ou menos.")]
         [Display(Name = "Qual são os sintomas?"), Required(ErrorMessage = "Esse campo é obrigatório")]
         public string Sintomas { get; set; }
-        //public ICollection<Paciente> Pacientes { get; set; }
         public IList<PacienteDoenca> PacientesDoencas { get; set; }
     }
 }

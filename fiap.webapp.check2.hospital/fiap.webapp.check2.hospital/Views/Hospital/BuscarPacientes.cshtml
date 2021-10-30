@@ -1,0 +1,43 @@
+﻿@model IList<Paciente>
+
+    @{ ViewData["title"] = "Listagem de Pacientes"; }
+
+    <h2>Listagem de Pacientes</h2>
+    <br />
+
+    <mensagem texto="@TempData[" msg"]"></mensagem>
+
+    <div class="row">
+        <div class="ml-3 mb-3">
+            <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Buscar Pacientes</a>
+            <a asp-action="Cadastrar" class="btn btn-warning ml-3">Cadastrar novo Paciente</a>
+        </div>
+        @if (ViewBag.sabor != null)
+        {
+        <div class="ml-md-auto mr-3">
+            <p style="border: 2px #ccc solid; padding: 5px; border-radius: 5px">@ViewBag.sabor <a asp-action="index"><img src="~/img/x.png" /></a></p>
+        </div>}
+    </div>
+
+    <table class="table text-center">
+        <cabecalho></cabecalho>
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Cpf</th>
+            <th>Endereço</th>
+            <th>Data Nascimento</th>
+            <th>Ações</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.PacienteId</td>
+            <td>@item.Nome</td>
+            <td>@item.Cpf</td>
+            <td>@item.Endereco.Rua, @item.Endereco.Bairro (@item.Endereco.Cep)</td>
+            <td>@item.DataNascimento.Value.ToShortDateString()</td>
+            <td><a asp-action="CadastrarDoenca" asp-controller="Paciente" asp-route-id="@item.PacienteId" name="idPaciente" class="btn btn-dark mb-3 ml-3">Doenças</a></td>
+        </tr>
+        }
+    </table>

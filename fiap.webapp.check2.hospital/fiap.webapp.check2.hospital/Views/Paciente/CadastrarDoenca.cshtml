@@ -2,28 +2,33 @@
 
 <h2 class="text-center">Relacionar Doença com Paciente</h2>
 <br />
+<link href="~/css/EstilizacaoHome.css" rel="stylesheet" />
 
-<form asp-action="CadastrarDoenca" asp-controller="Paciente">
+<form class="col-5 container" asp-action="CadastrarDoenca" asp-controller="Paciente">
     <div class="form-group">
         <p><span class="font-weight-bold">Paciente:</span> @Model.Nome</p>
         <input asp-for="PacienteId" class="form-control" type="hidden" />
-        <select class="form-control mr-1" asp-items="@ViewBag.doencas" name="DoencaId">
-        </select>
+        <div class="d-flex">
+            <select class="form-control mr-1 col-8" asp-items="@ViewBag.doencas" name="DoencaId">
+                <option disabled>--Selecione uma Doença--</option>
+            </select>
+            <a class="btn btn-success col-4" asp-action="Cadastrar" asp-controller="Doenca">Nova Doença</a>
+        </div>
     </div>
-    <input type="submit" class="btn btn-success" value="Salvar" />
-    <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
+    <div class="d-flex justify-content-center">
+        <input type="submit" class="btn btn-warning mr-2" value="Salvar" />
+        <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
+    </div>
 </form>
-
 <br />
 <h2 class="text-center">Todas as doenças do Paciente </h2>
-    <!--
-    <div class="form-group">
-        <label asp-for="N"></label>
-        <input asp-for="Sintomas" class="form-control" id="cpf" />
-        <span asp-validation-for="Sintomas" class="text-danger mb-3" style="text-align: center"></span>
-    </div>
+<br />
+<div class="d-flex justify-content-center">
+    @foreach (var item in ViewBag.doencasPorId)
+    {
+        <div class="div-warning mx-1" style="padding: 6px 20px; border-radius: 10px;">
+            <p class="m-0">@item.Nome</p>
+        </div>
+    }
+</div>
 
-    <div class="form-group">
-        <input asp-for="Pacientes" type="hidden" value="" class="form-control" />
-    </div>
-    -->

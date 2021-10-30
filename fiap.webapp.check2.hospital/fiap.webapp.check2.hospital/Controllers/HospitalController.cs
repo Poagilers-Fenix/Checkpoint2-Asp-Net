@@ -28,6 +28,13 @@ namespace fiap.webapp.check2.hospital.Controllers
             return View();
         }
 
+        [HttpGet("/Hospital/BuscarPacientes/{hospitalId}")]
+        public IActionResult BuscarPacientes(int hospitalId)
+        {
+            var listarPacientes = _context.Pacientes.Include(p => p.Endereco).Where(p => p.HospitalId == hospitalId).ToList();
+            return View(listarPacientes);
+        }
+
         [HttpPost]
         public IActionResult Cadastrar(Hospital hospital)
         {

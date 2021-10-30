@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Arquivos de Programas (x86)\\Git-Hub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj": {}
+    "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj": {}
   },
   "projects": {
-    "D:\\Arquivos de Programas (x86)\\Git-Hub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj": {
+    "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Arquivos de Programas (x86)\\Git-Hub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
+        "projectUniqueName": "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
         "projectName": "fiap.webapp.check2.hospital",
-        "projectPath": "D:\\Arquivos de Programas (x86)\\Git-Hub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
-        "packagesPath": "C:\\Users\\gih_m\\.nuget\\packages\\",
-        "outputPath": "D:\\Arquivos de Programas (x86)\\Git-Hub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\obj\\",
+        "projectPath": "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
+        "packagesPath": "C:\\Users\\Henrique\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\gih_m\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Henrique\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -73,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
