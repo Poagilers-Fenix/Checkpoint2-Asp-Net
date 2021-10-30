@@ -58,7 +58,7 @@ namespace fiap.webapp.check2.hospital.Controllers
         [HttpPost]
         public IActionResult CadastrarDoenca(PacienteDoenca pacienteDoenca)
         {
-            Console.WriteLine(pacienteDoenca);
+            
             _context.PacienteDoencas.Add(pacienteDoenca);
             _context.SaveChanges();
             return RedirectToAction("CadastrarDoenca");
