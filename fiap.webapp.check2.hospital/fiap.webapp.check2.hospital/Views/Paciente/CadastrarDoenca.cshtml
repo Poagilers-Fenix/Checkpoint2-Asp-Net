@@ -12,12 +12,12 @@
             <select class="form-control mr-1 col-8" asp-items="@ViewBag.doencas" name="DoencaId">
                 <option disabled>--Selecione uma Doença--</option>
             </select>
-            <a class="btn btn-success col-4" asp-action="Cadastrar" asp-controller="Doenca">Nova Doença</a>
+            <a class="btn btn-warning col-4" asp-action="Cadastrar" asp-controller="Doenca">Nova Doença</a>
         </div>
     </div>
     <div class="d-flex justify-content-center">
         <input type="submit" class="btn btn-warning mr-2" value="Salvar" />
-        <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
+        <a asp-action="Index" class="btn btn-outline-dark">Listar</a>
     </div>
 </form>
 <br />

@@ -60,7 +60,7 @@ namespace fiap.webapp.check2.hospital.Controllers
         {
             _context.Hospitais.Update(hospital);
             _context.SaveChanges();
-            TempData["msg"] = "Música " + hospital.Nome + " foi alterada";
+            TempData["msg"] = hospital.Nome + " foi alterado";
             return RedirectToAction("index");
         }
 
@@ -70,7 +70,7 @@ namespace fiap.webapp.check2.hospital.Controllers
             var musica = _context.Hospitais.Find(id);
             _context.Hospitais.Remove(musica);
             _context.SaveChanges();
-            TempData["msg"] = "Música " + musica.Nome + " foi removida!";
+            TempData["msg"] = musica.Nome + " foi removido!";
             //Redirect para a listagem
             return RedirectToAction("Index");
         }

@@ -2,7 +2,7 @@
 
 namespace fiap.webapp.check2.hospital.TagHelpers
 {
-    public class FeedbackTagHelper :TagHelper
+    public class MensagemTagHelper :TagHelper
     {
         public string Texto { get; set; }
         public string Class { get; set; }

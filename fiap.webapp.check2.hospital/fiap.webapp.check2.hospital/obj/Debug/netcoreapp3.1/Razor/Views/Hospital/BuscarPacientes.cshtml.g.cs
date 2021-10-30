@@ -61,6 +61,7 @@ using fiap.webapp.check2.hospital.Models;
                 return __backed__tagHelperScopeManager;
             }
         }
+        private global::fiap.webapp.check2.hospital.TagHelpers.MensagemTagHelper __fiap_webapp_check2_hospital_TagHelpers_MensagemTagHelper;
         private global::Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_AnchorTagHelper;
         private global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper;
         #pragma warning disable 1998
@@ -74,18 +75,32 @@ using fiap.webapp.check2.hospital.Models;
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("\r\n    <h2>Listagem de Pacientes</h2>\r\n    <br />\r\n\r\n    <mensagem");
-            BeginWriteAttribute("texto", " texto=\"", 146, "\"", 171, 1);
+            WriteLiteral("\r\n    <h2>Listagem de Pacientes</h2>\r\n    <br />\r\n\r\n    ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("mensagem", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "457e5509e311bfad280c7a8fd6fb7215979636f77622", async() => {
+            }
+            );
+            __fiap_webapp_check2_hospital_TagHelpers_MensagemTagHelper = CreateTagHelper<global::fiap.webapp.check2.hospital.TagHelpers.MensagemTagHelper>();
+            __tagHelperExecutionContext.Add(__fiap_webapp_check2_hospital_TagHelpers_MensagemTagHelper);
+            BeginWriteTagHelperAttribute();
 #nullable restore
 #line 8 "C:\Users\Henrique\Documents\GitHub\Checkpoint2-Asp-Net\fiap.webapp.check2.hospital\fiap.webapp.check2.hospital\Views\Hospital\BuscarPacientes.cshtml"
-WriteAttributeValue("", 154, TempData[" msg"], 154, 17, false);
+         WriteLiteral(TempData[" msg"]);
 
 #line default
 #line hidden
 #nullable disable
-            EndWriteAttribute();
-            WriteLiteral("></mensagem>\r\n\r\n    <div class=\"row\">\r\n        <div class=\"ml-3 mb-3\">\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "457e5509e311bfad280c7a8fd6fb7215979636f78019", async() => {
+            __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+            __fiap_webapp_check2_hospital_TagHelpers_MensagemTagHelper.Texto = __tagHelperStringValueBuffer;
+            __tagHelperExecutionContext.AddTagHelperAttribute("texto", __fiap_webapp_check2_hospital_TagHelpers_MensagemTagHelper.Texto, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            WriteLiteral("\r\n\r\n    <div class=\"row\">\r\n        <div class=\"ml-3 mb-3\">\r\n            ");
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "457e5509e311bfad280c7a8fd6fb7215979636f79359", async() => {
                 WriteLiteral("Buscar Pacientes");
             }
             );
@@ -104,7 +119,7 @@ WriteAttributeValue("", 154, TempData[" msg"], 154, 17, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "457e5509e311bfad280c7a8fd6fb7215979636f79485", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "457e5509e311bfad280c7a8fd6fb7215979636f710825", async() => {
                 WriteLiteral("Cadastrar novo Paciente");
             }
             );
@@ -138,8 +153,8 @@ WriteAttributeValue("", 154, TempData[" msg"], 154, 17, false);
 #line hidden
 #nullable disable
             WriteLiteral(" ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "457e5509e311bfad280c7a8fd6fb7215979636f711552", async() => {
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "457e5509e311bfad280c7a8fd6fb7215979636f711769", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "457e5509e311bfad280c7a8fd6fb7215979636f712893", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "457e5509e311bfad280c7a8fd6fb7215979636f713110", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -251,7 +266,7 @@ WriteAttributeValue("", 154, TempData[" msg"], 154, 17, false);
 #line hidden
 #nullable disable
             WriteLiteral("</td>\r\n            <td>");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "457e5509e311bfad280c7a8fd6fb7215979636f716948", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "457e5509e311bfad280c7a8fd6fb7215979636f718289", async() => {
                 WriteLiteral("Doenças");
             }
             );

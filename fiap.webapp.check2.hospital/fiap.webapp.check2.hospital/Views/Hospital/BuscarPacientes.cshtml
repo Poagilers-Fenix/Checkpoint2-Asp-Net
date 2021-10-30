@@ -9,16 +9,9 @@
 
     <div class="row">
         <div class="ml-3 mb-3">
-            <a asp-action="Index" asp-controller="Home" class="btn btn-warning">Buscar Pacientes</a>
-            <a asp-action="Cadastrar" class="btn btn-warning ml-3">Cadastrar novo Paciente</a>
+            <a asp-action="Cadastrar" asp-controller="paciente" class="btn btn-warning mt-4">Cadastrar novo Paciente</a>
         </div>
-        @if (ViewBag.sabor != null)
-        {
-        <div class="ml-md-auto mr-3">
-            <p style="border: 2px #ccc solid; padding: 5px; border-radius: 5px">@ViewBag.sabor <a asp-action="index"><img src="~/img/x.png" /></a></p>
-        </div>}
     </div>
-
     <table class="table text-center">
         <cabecalho></cabecalho>
         <tr>

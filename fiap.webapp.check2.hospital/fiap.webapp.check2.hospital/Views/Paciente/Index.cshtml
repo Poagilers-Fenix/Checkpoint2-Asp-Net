@@ -7,17 +7,21 @@
 <mensagem texto="@TempData["msg"]"></mensagem>
 <div class="row">
     <div class="ml-3 mb-3">
-            <form class="d-flex" asp-action="index">
-                <input name="pesquisa" class="form-control col-9 mr-2" id="pesquisa" />
-                <button type="submit" class="btn btn-warning col-3">Buscar</button>
-            </form>
+        <form class="d-flex" asp-action="index">
+            <input name="pesquisa" class="form-control col-9 mr-2" id="pesquisa" />
+            <button type="submit" class="btn btn-warning btn-sm p-0 col-3">
+                <span class="material-icons mt-1">
+                    search
+                </span>
+            </button>
+        </form>
         <a asp-action="Cadastrar" class="btn btn-warning mt-4">Cadastrar novo Paciente</a>
     </div>
     @if (ViewBag.nomePaciente != null)
     {
-<div class="ml-md-auto mr-3">
-    <p style="border: 2px #ccc solid; padding: 5px; border-radius: 5px" class="d-flex">@ViewBag.nomePaciente <a asp-action="index"><span class="material-icons d-flex align-content-center text-danger ml-2">cancel</span></a></p>
-</div>
+        <div class="ml-md-auto mr-3">
+            <p style="border: 2px #ccc solid; padding: 5px; border-radius: 5px" class="d-flex">@ViewBag.nomePaciente <a asp-action="index"><span class="material-icons d-flex align-content-center text-danger ml-2">cancel</span></a></p>
+        </div>
     }
 </div>
 
@@ -33,13 +37,13 @@
     </tr>
     @foreach (var item in Model)
     {
-<tr>
-    <td>@item.PacienteId</td>
-    <td>@item.Nome</td>
-    <td>@item.Cpf</td>
-    <td>@item.Endereco.Rua, @item.Endereco.Bairro (@item.Endereco.Cep)</td>
-    <td>@item.DataNascimento.Value.ToShortDateString()</td>
-    <td><a asp-action="CadastrarDoenca" asp-controller="Paciente" asp-route-id="@item.PacienteId" name="idPaciente" class="btn btn-dark mb-3 ml-3">Doenças</a></td>
-</tr>
-}
+        <tr>
+            <td>@item.PacienteId</td>
+            <td>@item.Nome</td>
+            <td>@item.Cpf</td>
+            <td>@item.Endereco.Rua, @item.Endereco.Bairro (@item.Endereco.Cep)</td>
+            <td>@item.DataNascimento.Value.ToShortDateString()</td>
+            <td><a asp-action="CadastrarDoenca" asp-controller="Paciente" asp-route-id="@item.PacienteId" name="idPaciente" class="btn btn-dark mb-3 ml-3">Doenças</a></td>
+        </tr>
+    }
 </table>

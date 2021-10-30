@@ -6,11 +6,11 @@
 <h2 class="text-center">Cadastro de Hospital</h2>
 <br />
 
-<feedback texto="@TempData["msg"]"></feedback>
+<mensagem texto="@TempData["msg"]"></mensagem>
 
 <form asp-action="Cadastrar" asp-controller="Hospital">
     <partial name="_Form" />
 
     <button class="btn btn-warning">Salvar</button>
-    <a asp-action="index" class="btn btn-outline-dark">Voltar</a>
+    <a asp-action="index" class="btn btn-outline-dark">Listar</a>
 </form>
