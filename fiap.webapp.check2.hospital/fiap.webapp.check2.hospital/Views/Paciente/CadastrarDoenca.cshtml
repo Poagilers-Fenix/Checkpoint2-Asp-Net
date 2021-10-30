@@ -1,28 +1,29 @@
 ﻿@model Paciente
 
-
+<h2 class="text-center">Relacionar Doença com Paciente</h2>
+<br />
 
 <form asp-action="CadastrarDoenca" asp-controller="Paciente">
     <div class="form-group">
-        <p>@Model.Nome</p>
+        <p><span class="font-weight-bold">Paciente:</span> @Model.Nome</p>
         <input asp-for="PacienteId" class="form-control" type="hidden" />
         <select class="form-control mr-1" asp-items="@ViewBag.doencas" name="DoencaId">
         </select>
     </div>
-    <input type="submit" class="btn btn-success" value="Salvar"/>
-    
-</form>
+    <input type="submit" class="btn btn-success" value="Salvar" />
     <a asp-action="Index" class="btn btn-outline-dark">Voltar</a>
+</form>
 
+<br />
+<h2 class="text-center">Todas as doenças do Paciente </h2>
+    <!--
+    <div class="form-group">
+        <label asp-for="N"></label>
+        <input asp-for="Sintomas" class="form-control" id="cpf" />
+        <span asp-validation-for="Sintomas" class="text-danger mb-3" style="text-align: center"></span>
+    </div>
 
-<!--
-<div class="form-group">
-    <label asp-for="N"></label>
-    <input asp-for="Sintomas" class="form-control" id="cpf" />
-    <span asp-validation-for="Sintomas" class="text-danger mb-3" style="text-align: center"></span>
-</div>
-
-<div class="form-group">
-    <input asp-for="Pacientes" type="hidden" value="" class="form-control" />
-</div>
--->
+    <div class="form-group">
+        <input asp-for="Pacientes" type="hidden" value="" class="form-control" />
+    </div>
+    -->
