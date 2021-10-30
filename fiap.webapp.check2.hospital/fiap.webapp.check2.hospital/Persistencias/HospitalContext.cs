@@ -14,5 +14,6 @@ namespace fiap.webapp.check2.hospital.Persistencias
         public DbSet<Paciente> Pacientes { get; set; }
         public DbSet<Doenca> Doencas { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
+        public DbSet<PacienteDoenca> PacienteDoencas { get; set; }
     }
 }

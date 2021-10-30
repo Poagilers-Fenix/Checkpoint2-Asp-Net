@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace fiap.webapp.check2.hospital.Migrations
 {
-    public partial class BD : Migration
+    public partial class HospitalBanco : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -110,6 +110,32 @@ namespace fiap.webapp.check2.hospital.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "PacienteDoencas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    PacienteId = table.Column<int>(type: "int", nullable: false),
+                    DoencaId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PacienteDoencas", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PacienteDoencas_Doencas_DoencaId",
+                        column: x => x.DoencaId,
+                        principalTable: "Doencas",
+                        principalColumn: "DoencaId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PacienteDoencas_Pacientes_PacienteId",
+                        column: x => x.PacienteId,
+                        principalTable: "Pacientes",
+                        principalColumn: "PacienteId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_DoencaPaciente_PacientesPacienteId",
                 table: "DoencaPaciente",
@@ -119,6 +145,16 @@ namespace fiap.webapp.check2.hospital.Migrations
                 name: "IX_Hospitais_EnderecoId",
                 table: "Hospitais",
                 column: "EnderecoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PacienteDoencas_DoencaId",
+                table: "PacienteDoencas",
+                column: "DoencaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PacienteDoencas_PacienteId",
+                table: "PacienteDoencas",
+                column: "PacienteId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pacientes_EnderecoId",
@@ -135,6 +171,9 @@ namespace fiap.webapp.check2.hospital.Migrations
         {
             migrationBuilder.DropTable(
                 name: "DoencaPaciente");
+
+            migrationBuilder.DropTable(
+                name: "PacienteDoencas");
 
             migrationBuilder.DropTable(
                 name: "Doencas");

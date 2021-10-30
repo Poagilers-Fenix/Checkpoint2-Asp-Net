@@ -6255,23 +6255,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Henrique\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\SAMSUNG\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
+      "projectUniqueName": "D:\\Área de Trabalho\\Kaue\\2TDSG\\DevopsCloudingComputing\\2ºSemestre\\CheckPoint2\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
       "projectName": "fiap.webapp.check2.hospital",
-      "projectPath": "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
-      "packagesPath": "C:\\Users\\Henrique\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Henrique\\Documents\\GitHub\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\obj\\",
+      "projectPath": "D:\\Área de Trabalho\\Kaue\\2TDSG\\DevopsCloudingComputing\\2ºSemestre\\CheckPoint2\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital.csproj",
+      "packagesPath": "C:\\Users\\SAMSUNG\\.nuget\\packages\\",
+      "outputPath": "D:\\Área de Trabalho\\Kaue\\2TDSG\\DevopsCloudingComputing\\2ºSemestre\\CheckPoint2\\Checkpoint2-Asp-Net\\fiap.webapp.check2.hospital\\fiap.webapp.check2.hospital\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Henrique\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\SAMSUNG\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6322,6 +6318,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.18, 3.1.18]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -6330,7 +6332,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.303\\RuntimeIdentifierGraph.json"
       }
     }
   }

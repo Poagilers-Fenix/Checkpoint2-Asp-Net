@@ -46,13 +46,22 @@ namespace fiap.webapp.check2.hospital.Controllers
             return View(lista);
         }
 
-        [HttpGet("/paciente/CadastrarDoencaPraPaciente/{idPaciente}")]
-        public IActionResult CadastrarDoencaPraPaciente(int idPaciente)
+        [HttpGet("/paciente/CadastrarDoenca/{idPaciente}")]
+        public IActionResult CadastrarDoenca(int idPaciente)
         {
             Paciente paciente = _context.Pacientes.Find(idPaciente);
             var lista = _context.Doencas.ToList();
             ViewBag.doencas = new SelectList(lista, "DoencaId", "Nome");
             return View(paciente);
+        }
+
+        [HttpPost]
+        public IActionResult CadastrarDoenca(PacienteDoenca pacienteDoenca)
+        {
+            Console.WriteLine(pacienteDoenca);
+            _context.PacienteDoencas.Add(pacienteDoenca);
+            _context.SaveChanges();
+            return RedirectToAction("CadastrarDoenca");
         }
     }
 }

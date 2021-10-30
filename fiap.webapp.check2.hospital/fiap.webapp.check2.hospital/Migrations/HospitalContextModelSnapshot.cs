@@ -145,6 +145,28 @@ namespace fiap.webapp.check2.hospital.Migrations
                     b.ToTable("Pacientes");
                 });
 
+            modelBuilder.Entity("fiap.webapp.check2.hospital.Models.PacienteDoenca", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("DoencaId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PacienteId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DoencaId");
+
+                    b.HasIndex("PacienteId");
+
+                    b.ToTable("PacienteDoencas");
+                });
+
             modelBuilder.Entity("DoencaPaciente", b =>
                 {
                     b.HasOne("fiap.webapp.check2.hospital.Models.Doenca", null)
@@ -182,6 +204,25 @@ namespace fiap.webapp.check2.hospital.Migrations
                     b.Navigation("Endereco");
 
                     b.Navigation("Hospital");
+                });
+
+            modelBuilder.Entity("fiap.webapp.check2.hospital.Models.PacienteDoenca", b =>
+                {
+                    b.HasOne("fiap.webapp.check2.hospital.Models.Doenca", "Doenca")
+                        .WithMany()
+                        .HasForeignKey("DoencaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("fiap.webapp.check2.hospital.Models.Paciente", "Paciente")
+                        .WithMany()
+                        .HasForeignKey("PacienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Doenca");
+
+                    b.Navigation("Paciente");
                 });
 
             modelBuilder.Entity("fiap.webapp.check2.hospital.Models.Hospital", b =>
