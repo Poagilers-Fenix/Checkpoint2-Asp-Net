@@ -36,7 +36,7 @@ namespace fiap.webapp.check2.hospital.Controllers
                 _context.Hospitais.Add(hospital);
                 _context.SaveChanges();
                 TempData["msg"] = "Hospital cadastrado com sucesso";
-                return RedirectToAction("index");
+                return RedirectToAction("Cadastrar");
             }
             return View();
         }

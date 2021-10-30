@@ -1525,3 +1525,8 @@ D:\Área de Trabalho\Kaue\2TDSG\DevopsCloudingComputing\2ºSemestre\CheckPoint2\
 D:\Área de Trabalho\Kaue\2TDSG\DevopsCloudingComputing\2ºSemestre\CheckPoint2\Checkpoint2-Asp-Net\fiap.webapp.check2.hospital\fiap.webapp.check2.hospital\obj\Debug\netcoreapp3.1\fiap.webapp.check2.hospital.genruntimeconfig.cache
 D:\Área de Trabalho\Kaue\2TDSG\DevopsCloudingComputing\2ºSemestre\CheckPoint2\Checkpoint2-Asp-Net\fiap.webapp.check2.hospital\fiap.webapp.check2.hospital\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\CadastrarDoenca.cshtml.g.cs
 C:\Users\Henrique\Documents\GitHub\Checkpoint2-Asp-Net\fiap.webapp.check2.hospital\fiap.webapp.check2.hospital\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\CadastrarDoenca.cshtml.g.cs
+D:\Arquivos de Programas (x86)\Git-Hub\Checkpoint2-Asp-Net\fiap.webapp.check2.hospital\fiap.webapp.check2.hospital\obj\Debug\netcoreapp3.1\Razor\Views\Doenca\Cadastrar.cshtml.g.cs
+D:\Arquivos de Programas (x86)\Git-Hub\Checkpoint2-Asp-Net\fiap.webapp.check2.hospital\fiap.webapp.check2.hospital\obj\Debug\netcoreapp3.1\Razor\Views\Doenca\_Form.cshtml.g.cs
+D:\Arquivos de Programas (x86)\Git-Hub\Checkpoint2-Asp-Net\fiap.webapp.check2.hospital\fiap.webapp.check2.hospital\obj\Debug\netcoreapp3.1\Razor\Views\Hospital\Editar.cshtml.g.cs
+D:\Arquivos de Programas (x86)\Git-Hub\Checkpoint2-Asp-Net\fiap.webapp.check2.hospital\fiap.webapp.check2.hospital\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\Cadastrar.cshtml.g.cs
+D:\Arquivos de Programas (x86)\Git-Hub\Checkpoint2-Asp-Net\fiap.webapp.check2.hospital\fiap.webapp.check2.hospital\obj\Debug\netcoreapp3.1\Razor\Views\Paciente\CadastrarDoenca.cshtml.g.cs
