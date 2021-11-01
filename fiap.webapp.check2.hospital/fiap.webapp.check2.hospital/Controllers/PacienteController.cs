@@ -30,14 +30,19 @@ namespace fiap.webapp.check2.hospital.Controllers
         [HttpPost]
         public IActionResult Cadastrar(Paciente paciente)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && paciente.HospitalId != 0)
             {
-                Console.WriteLine();
                 _context.Pacientes.Add(paciente);
                 _context.SaveChanges();
                 TempData["msg"] = "Paciente cadastrado com sucesso";
                 return RedirectToAction("Cadastrar");
             }
+            else if(paciente.HospitalId == 0)
+            {
+                TempData["msg"] = "Paciente precisa ter relação com hospital";
+                return View();
+            }
+            TempData["msg"] = "Erro ao realizar cadastro";
             return View();
         }
 
@@ -71,9 +76,15 @@ namespace fiap.webapp.check2.hospital.Controllers
         [HttpPost]
         public IActionResult CadastrarDoenca(PacienteDoenca pacienteDoenca)
         {
-            
-            _context.PacienteDoencas.Add(pacienteDoenca);
-            _context.SaveChanges();
+            try
+            {
+                _context.PacienteDoencas.Add(pacienteDoenca);
+                _context.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
             return RedirectToAction("CadastrarDoenca");
         }
     }
